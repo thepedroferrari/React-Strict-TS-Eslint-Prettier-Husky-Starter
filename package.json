@@ -1,6 +1,7 @@
 {
   "name": "react-strict-tsc-eslint-prettier-husky-starter",
   "version": "0.1.0",
+  "author": "@thepedroferrari",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -20,7 +21,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:fix": "eslint -c './.eslintrc' --fix --ext js,jsx,ts,tsx './src/.'",
+    "prettier:check": "prettier --check './src/.",
+    "prettier:fix": "prettier --write --ignore-unknown './src/.'",
+    "postinstall": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -30,9 +35,14 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      ">0.5%",
+      "last 2 Chrome versions",
+      "last 2 Safari versions",
+      "last 2 Edge versions",
+      "last 2 Firefox versions",
+      "not ie > 0",
+      "not op_mini all",
+      "not and_uc > 0"
     ],
     "development": [
       "last 1 chrome version",

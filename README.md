@@ -1,4 +1,20 @@
-# Getting Started with Create React App
+# React Strict TS Eslint Prettier Husky Starter
+
+
+## Folder Structure
+
+- components: Place all your components there. Each on its own folder. Child components belong on their parent folder unless they are used by another component. Export from an index.ts file.
+
+- constants: Files for different types of constants you might need on your app. Export from an index.ts file.
+
+- hooks: Each hook belongs on its own file and should have its own named export. Export from an index.ts file.
+
+- types: Types that may be globally needed. Not to confuse with components props. Those should be close with each particular component.
+
+- utils: Utility functions that serve multiple purpose and might have a re-use. 
+
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -44,4 +60,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-# React-Strict-TS-Eslint-Prettier-Husky-Starter
