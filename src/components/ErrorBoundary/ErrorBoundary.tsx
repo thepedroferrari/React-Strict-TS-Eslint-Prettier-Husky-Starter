@@ -12,8 +12,7 @@ export const ErrorBoundary: FC<Props> = ({ children, reset }) => (
     onReset={() => {
       // Reset the state and cleanup the memory of the app
       reset()
-    }}
-  >
+    }}>
     {children}
   </ReactErrorBoundary>
 )
