@@ -28,6 +28,7 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "react/require-default-props": "off",
+    "react/function-component-definition": "off",
     "react/jsx-props-no-spreading": "error",
     "react/no-array-index-key": "error",
     "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
