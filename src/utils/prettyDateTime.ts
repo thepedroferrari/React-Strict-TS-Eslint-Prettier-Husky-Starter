@@ -5,7 +5,7 @@ type DateFormatPreSettings =
   | "shortDate"
 type DateFormat = Record<DateFormatPreSettings, Intl.DateTimeFormatOptions>
 
-export const dateFormat: DateFormat = {
+export const dateFormat: DateFormat = Object.freeze({
   dayMonth: {
     day: "numeric",
     month: "short",
@@ -25,10 +25,32 @@ export const dateFormat: DateFormat = {
     month: "short",
     year: "numeric",
   },
-}
+})
 
-export const prettyTime = (date: Date, options: Intl.DateTimeFormatOptions) =>
-  date.toLocaleTimeString(navigator.language, options)
+/**
+ * @param date Date
+ * @param options Intl.DateTimeFormatOptions
+ * @param language Navigator["language"]
+ * @fires date.toLocaleTimeString
+ * @emits O(1)
+ * @returns string
+ */
+export const prettyTime = (
+  date: Date,
+  options: Intl.DateTimeFormatOptions,
+  language: Navigator["language"] = navigator.language,
+) => date.toLocaleTimeString(language, options)
 
-export const prettyDate = (date: Date, options: Intl.DateTimeFormatOptions) =>
-  date.toLocaleDateString(navigator.language, options)
+/**
+ * @param date Date
+ * @param options Intl.DateTimeFormatOptions
+ * @param language Navigator["language"]
+ * @fires date.toLocaleDateString
+ * @emits O(1)
+ * @returns string
+ */
+export const prettyDate = (
+  date: Date,
+  options: Intl.DateTimeFormatOptions,
+  language: Navigator["language"] = navigator.language,
+) => date.toLocaleDateString(language, options)
