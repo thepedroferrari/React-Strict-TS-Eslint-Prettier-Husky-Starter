@@ -1,12 +1,12 @@
-import type { FC } from "react"
 import { ErrorBoundary as ReactErrorBoundary } from "react-error-boundary"
 import { ErrorFallback } from "./ErrorFallback"
 
 interface Props {
   reset: () => void
+  children: React.ReactNode
 }
 
-export const ErrorBoundary: FC<Props> = ({ children, reset }) => (
+export const ErrorBoundary = ({ children, reset }: Props) => (
   <ReactErrorBoundary
     FallbackComponent={ErrorFallback}
     onReset={() => {
