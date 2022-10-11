@@ -1,16 +1,19 @@
 import { ErrorBoundary } from "components"
 import React from "react"
-import ReactDOM from "react-dom"
+import { createRoot } from "react-dom/client"
 import { App } from "./components/App"
 import reportWebVitals from "./reportWebVitals"
 
-ReactDOM.render(
+const rootElement = document.getElementById("root")
+if (!rootElement) throw new Error("Failed to find the root element")
+const root = createRoot(rootElement)
+
+root.render(
   <React.StrictMode>
     <ErrorBoundary reset={() => {}}>
       <App />
     </ErrorBoundary>
   </React.StrictMode>,
-  document.getElementById("root"),
 )
 
 // If you want to start measuring performance in your app, pass a function
